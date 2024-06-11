@@ -5,6 +5,7 @@ class Empleado{
     private $salario;
 
 
+
     //Constructor
     public function __construct($nombre,$salario)
     {
@@ -21,5 +22,27 @@ class Empleado{
     public function getSalario(){
         return $this->salario; //Devuelve el valor salario
     }
+
+    
 };
+
+
+// Clase Desarrollador
+class Desarrollador extends Empleado {
+    private $framework;
+
+    // Constructor
+    public function __construct($nombre, $salario, $framework) {
+        parent::__construct($nombre, $salario);
+        $this->framework = $framework;
+    }
+
+    // Método para acceder al framework
+    public function getFramework() {
+        return $this->framework;
+    }
+}
+
+
 ?>
+
