@@ -43,6 +43,22 @@ class Desarrollador extends Empleado {
     }
 }
 
+// Clase Diseniador
+class Diseniador extends Empleado {
+    private $herramientas;
+
+    // Constructor
+    public function __construct($nombre, $salario, $herramientas) {
+        parent::__construct($nombre, $salario);
+        $this->herramientas = $herramientas;
+    }
+
+    // Método para acceder a las herramientas del diseniador
+    public function getHerramientas() {
+        return $this->herramientas;
+    }
+}
+
 
 ?>
 
