@@ -41,6 +41,10 @@ class Desarrollador extends Empleado {
         return $this->framework;
     }
 
+    public function getNombre() {
+        return $this->nombre;
+    }
+
     // Método para calcular el salario neto (igual que en Empleado)
     public function calcularSalarioNeto() {
         return $this->salario * 0.90; // 10% de descuento
@@ -63,6 +67,11 @@ class Diseniador extends Empleado {
         return $this->herramientas;
     }
 
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+
     // Método para calcular el salario neto con un descuento adicional del 5%
     public function calcularSalarioNeto() {
         $salarioConDescuentoBase = $this->salario * 0.90; // 10% de descuento inicial
@@ -75,9 +84,10 @@ $empleado = new Empleado("Juan", 50000);
 $desarrollador = new Desarrollador("Pedro", 60000, "Laravel");
 $diseniador = new Diseniador("María", 55000, "Adobe Illustrator");
 
-// Mostrar nombre y salario neto de cada empleado
-echo "El empleado " . $empleado->getNombre() . " tiene un salario neto de: $" . $empleado->calcularSalarioNeto() . "<br>";
-echo "El desarrollador " . $desarrollador->getNombre() . " tiene un salario neto de: $" . $desarrollador->calcularSalarioNeto() . " y trabaja con el framework " . $desarrollador->getFramework() . "<br>";
-echo "El diseniador " . $diseniador->getNombre() . " tiene un salario neto de: $" . $diseniador->calcularSalarioNeto() . " y trabaja con la herramienta " . $diseniador->getHerramientas() . "<br>";
 
+// Mostrar nombre y salario neto de cada empleado
+echo "<h1>PHP OO</h1>" ."<br>";
+echo "El empleado esta trabajando " . "<br>" . $empleado->getNombre() . " tiene un salario neto de: $" . $empleado->calcularSalarioNeto() . "<br>";
+echo "El desarrollador " . $desarrollador->getNombre() . " Esta trabajando con el framework " . $desarrollador->getFramework() . "<br>". " Salario neto de " .$desarrollador->getNombre() . " es de :$" . $desarrollador->calcularSalarioNeto() . "<br>";
+echo "El diseniador " . $diseniador->getNombre() . " Esta trabajando con la herramienta " . $diseniador->getHerramientas() . "<br>". " Salario neto de " . $diseniador->getNombre() ." es de :$" . $diseniador->calcularSalarioNeto(). "<br>";
 ?>
