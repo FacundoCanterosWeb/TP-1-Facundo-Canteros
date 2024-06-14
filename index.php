@@ -1,4 +1,6 @@
 <?php
+include 'Desarrollador.php';
+include 'Diseniador.php';
 // Clase Empleado
 class Empleado {
     private $nombre;
@@ -25,59 +27,8 @@ class Empleado {
     }
 }
 
-// Clase Desarrollador
-class Desarrollador extends Empleado {
-    private $framework;
-
-    // Constructor
-    public function __construct($nombre, $salario, $framework) {
-        $this->nombre = $nombre;
-        $this->salario = $salario;
-        $this->framework = $framework;
-    }
-
-    // Método para acceder al framework
-    public function getFramework() {
-        return $this->framework;
-    }
-
-    public function getNombre() {
-        return $this->nombre;
-    }
-
-    // Método para calcular el salario neto (igual que en Empleado)
-    public function calcularSalarioNeto() {
-        return $this->salario * 0.90; // 10% de descuento
-    }
-}
-
-// Clase Diseniador
-class Diseniador extends Empleado {
-    private $herramientas;
-
-    // Constructor
-    public function __construct($nombre, $salario, $herramientas) {
-        $this->nombre = $nombre;
-        $this->salario = $salario;
-        $this->herramientas = $herramientas;
-    }
-
-    // Método para acceder a las herramientas del diseniador
-    public function getHerramientas() {
-        return $this->herramientas;
-    }
-
-    public function getNombre() {
-        return $this->nombre;
-    }
 
 
-    // Método para calcular el salario neto con un descuento adicional del 5%
-    public function calcularSalarioNeto() {
-        $salarioConDescuentoBase = $this->salario * 0.90; // 10% de descuento inicial
-        return $salarioConDescuentoBase * 0.95; // 5% de descuento adicional
-    }
-}
 
 // Crear instancias de Empleado, Desarrollador y Diseniador
 $empleado = new Empleado("Juan", 50000);
