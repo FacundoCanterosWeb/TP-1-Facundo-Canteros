@@ -28,4 +28,5 @@ class Desarrollador extends Empleado {
 //Paso los parametros a Desarrollador
 $desarrollador = new Desarrollador("Pedro","Nicolas", 60000, "Laravel");
 //Imprimo por pantalla los parametros de Desarrollador
+//Tambien se aplica el polimorfismo ya que Nombre, Apellido, calcularSalarioNeto son heredadas de la clase empleado y son sobrescritos por los nuevos valores
 echo "El desarrollador " . $desarrollador->Nombre()  . "  ". $desarrollador->Apellido()  . "  " .   $desarrollador->Framework() . "<br>" . $desarrollador->calcularSalarioNeto() . "<br>";
