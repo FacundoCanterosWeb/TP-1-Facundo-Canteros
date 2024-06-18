@@ -32,8 +32,7 @@
         return $this->salario * 0.90; // 10% de descuento
     }
 abstract public function PuestoTrabajo();
-abstract public function tarea();
-abstract public function calcularSalarioNeto();
+
 
 }
 
