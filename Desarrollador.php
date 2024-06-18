@@ -1,6 +1,6 @@
 <?php
 // Clase Desarrollador
-class Desarrollador extends Empleado {
+class Desarrollador extends Empleado implements IEmpleado {
     private $framework;
   
 
@@ -10,6 +10,7 @@ class Desarrollador extends Empleado {
         $this->salario = $salario;
         $this->framework = $framework;
         $this->apellido = $apellido;
+        
     }
 
     // Método para acceder al framework
@@ -18,15 +19,25 @@ class Desarrollador extends Empleado {
     }
 
 
+   
+public function PuestoTrabajo()
+{
+    return 'Desarrollador';
+}
+
+public function Lenguaje()
+{
+    return "Lenguaje: PHP";
+}
+
+//Metodo abstracto instanciado en Empleado
+public function tarea(){
+return "El desarrollador " . $this->Nombre() . " " .  $this->Apellido() . $this->Framework();
+}
+//Metodo abstracto instanciado en Empleado
     // Método para calcular el salario neto (igual que en Empleado)
     public function calcularSalarioNeto() {
         return " El salario neto es $:" . $this->salario * 0.90; // 10% de descuento
     }
-
-   
 }
-//Paso los parametros a Desarrollador
-$desarrollador = new Desarrollador("Pedro","Nicolas", 60000, "Laravel");
-//Imprimo por pantalla los parametros de Desarrollador
-//Tambien se aplica el polimorfismo ya que Nombre, Apellido, calcularSalarioNeto son heredadas de la clase empleado y son sobrescritos por los nuevos valores
-echo "El desarrollador " . $desarrollador->Nombre()  . "  ". $desarrollador->Apellido()  . "  " .   $desarrollador->Framework() . "<br>" . $desarrollador->calcularSalarioNeto() . "<br>";
+

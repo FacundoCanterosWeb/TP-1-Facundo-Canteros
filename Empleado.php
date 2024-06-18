@@ -1,13 +1,13 @@
 <?php
 
 // Clase Empleado
-class Empleado {
+ abstract class Empleado implements IEmpleado {
     private $nombre;
    private $apellido;
     private $salario;
 
     // Constructor
-    public function __construct($nombre, $salario, $apellido) {
+    public function __construct($nombre, $apellido, $salario) {
         $this->nombre = $nombre;
         $this->salario = $salario;
         $this->apellido = $apellido;
@@ -28,20 +28,24 @@ class Empleado {
     }
 
     // Método para calcular el salario neto con un descuento fijo del 10%
-    public function calcularSalarioNeto() {
+    public function SalarioNeto() {
         return $this->salario * 0.90; // 10% de descuento
     }
+abstract public function PuestoTrabajo();
+abstract public function tarea();
+abstract public function calcularSalarioNeto();
+
 }
 
 
 
 
 // Paso parametros a Empleado
-$empleado = new Empleado("Juan", 50000, "Canteros");
+//$empleado = new Empleado("Juan", 50000, "Canteros");
 
 
 
 // Imprimo por pantalla los parametros de Empleado
-echo "El empleado esta trabajando " . "<br>" . $empleado->Nombre() ." "  . $empleado->Apellido().  " tiene un salario neto de: $" . $empleado->calcularSalarioNeto() . "<br>";
+//echo "El empleado esta trabajando " . "<br>" . $empleado->Nombre() ." "  . $empleado->Apellido().  " tiene un salario neto de: $" . $empleado->calcularSalarioNeto() . "<br>";
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 // Clase Diseniador
-class Diseniador extends Empleado {
+class Diseniador extends Empleado implements IEmpleado {
     private $herramientas;
    
 
@@ -20,6 +20,24 @@ class Diseniador extends Empleado {
 
 
 
+    
+
+    public function PuestoTrabajo()
+    {
+        return "Diseniador";
+    }
+
+    public function Disenio()
+    {
+        return "Herramienta: Photoshop";
+    }
+//Metodo abstracto instanciado en Empleado
+    public function tarea()
+    {
+        return "Tarea : "  ."El diseniador ". $this->Nombre() . " " . $this->Apellido() . $this->Herramientas();
+
+    }
+    //Metodo abstracto instanciado en Empleado
     // Método para calcular el salario neto con un descuento adicional del 5%
     public function calcularSalarioNeto() {
         $salarioConDescuentoBase = $this->salario * 0.90; // 10% de descuento inicial
@@ -27,10 +45,7 @@ class Diseniador extends Empleado {
     }
 }
 
-//Paso los parametros a Diseniador
 
-$diseniador = new Diseniador("María", "Gomez" ,55000, "Adobe Illustrator");
-//Imprimo por pantalla los parametros de Diseniador
-//Tambien se aplica el polimorfismo ya que Nombre, Apellido, calcularSalarioNeto son heredadas de la clase empleado y son sobrescritos por los nuevos valores
-echo "El diseniador " . $diseniador->Nombre() . " ".$diseniador->Apellido()." ". $diseniador->Herramientas() . "<br>" . $diseniador->calcularSalarioNeto(). "<br>";
+
+
 ?>
